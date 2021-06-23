@@ -1,0 +1,24 @@
+<main class="main-home">
+  <section class="info-home">
+    <div class="buttons-home">
+      <!-- <wa-button [type]="secondaryType">
+        Search for place
+      </wa-button> -->
+      <form [formGroup]="cityForm" (submit)="onSubmit()">
+        <input type="text" placeholder="Enter city" formControlName="cityName" class="cityInput">
+        <button type="submit" class="searchBtn">search</button>
+      </form>
+      <wa-icon-button>
+        <span class="material-icons">gps_fixed</span>
+      </wa-icon-button>
+    </div>
+    <wa-weather-image [weather]="city.weather" [verticalCenter]="true"></wa-weather-image>
+    <wa-weather-info [city]="city"></wa-weather-info>
+  </section>
+  <section class="extra-home">
+    <div class="forecast-grid">
+      <wa-forecast-card *ngFor="let item of forecast" [item]="item">
+      </wa-forecast-card>
+    </div>
+  </section>
+</main>

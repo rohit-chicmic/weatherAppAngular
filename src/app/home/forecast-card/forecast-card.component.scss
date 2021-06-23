@@ -1,0 +1,29 @@
+@import 'colors';
+
+.forecast-content {
+  text-align: center;
+}
+
+.forecast-date {
+  margin-top: 0;
+  margin-bottom: 0.625rem;
+}
+
+.forecast-temp {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+  > span:last-child {
+    color: $secondary-text-color;
+  }
+}
+
+.image-container {
+  height: 66px;
+}
+
+.card[_ngcontent-bkw-c12] {
+  border-radius: 10px;
+}

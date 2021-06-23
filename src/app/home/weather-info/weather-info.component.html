@@ -1,0 +1,22 @@
+<div class="weather-info" *ngIf="city">
+  <p class="temperature">
+    <span>{{city.temp | number : '1.1-1' }}</span>
+    <span class="unit">°C</span>
+  </p>
+  <div class="weather-extra">
+    <p class="time">{{city.weather}}</p>
+    <div class="weather-location">
+      <p class="day">
+        <span>today</span>
+        <span class="point"></span>
+        <span>{{ currentDate | date: 'EEEE, d MMMM' }}</span>
+      </p>
+      <p class=location>
+        <span class="material-icons">
+          location_on
+          </span>
+        <span>{{city.name}}</span>
+      </p>
+    </div>
+  </div>
+</div>

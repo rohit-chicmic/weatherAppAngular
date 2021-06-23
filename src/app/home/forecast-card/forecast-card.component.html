@@ -1,0 +1,12 @@
+<wa-card>
+  <div class="forecast-content">
+    <p class="forecast-date">{{getDate(item.date)}}</p>
+    <div class="image-container">
+      <wa-weather-image [weather]="item.weather" [width]="57"></wa-weather-image>
+    </div>
+    <p class="forecast-temp">
+      <span>{{item.temp.max | number : '1.1-1'}}°C</span>
+      <span>{{item.temp.min | number : '1.1-1'}}°C</span>
+    </p>
+  </div>
+</wa-card>
