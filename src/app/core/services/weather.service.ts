@@ -42,7 +42,7 @@ export class WeatherService {
     return this.http.get<ForecastResponse>(this.buildUrl('forecast', cityName))
       .pipe(
         map(({ list }) => {
-          const forecast = list.slice(1, 6);
+          const forecast = list.slice(1, 9);
           return forecast.map(({ main, weather, dt_txt }) => ({
             date: dt_txt,
             weather: weather[0].main,
