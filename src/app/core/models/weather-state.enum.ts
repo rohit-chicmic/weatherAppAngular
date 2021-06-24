@@ -5,5 +5,6 @@ export enum WeatherState {
   Snow = 'SNOW',
   Atmosphere = 'ATMOSPHERE',
   Clear = 'CLEAR',
-  Clouds = 'CLOUDS'
+  Clouds = 'CLOUDS',
+  Haze = 'HAZE'
 }

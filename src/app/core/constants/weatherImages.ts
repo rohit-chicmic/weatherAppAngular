@@ -7,7 +7,8 @@ const images: any = {
   [WeatherState.Snow]: 'assets/snow.png',
   [WeatherState.Atmosphere]: 'assets/atmosphere.png',
   [WeatherState.Clear]: 'assets/clear.png',
-  [WeatherState.Clouds]: 'assets/clouds.png'
+  [WeatherState.Clouds]: 'assets/clouds.png',
+  [WeatherState.Haze]: 'assets/haze.png'
 };
 
 export default images;

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { WeatherImageService } from 'src/app/core/services/weather-image.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { WeatherImageService } from 'src/app/core/services/weather-image.service
   templateUrl: './weather-image.component.html',
   styleUrls: ['./weather-image.component.scss']
 })
-export class WeatherImageComponent implements OnInit {
+export class WeatherImageComponent implements OnInit, OnChanges {
   @Input() weather!: string;
   @Input() width = 150;
   @Input() verticalCenter = false;
@@ -15,6 +15,10 @@ export class WeatherImageComponent implements OnInit {
   constructor (private weatherImageService: WeatherImageService) {}
 
   ngOnInit(): void {
+    this.image = this.weatherImageService.getImage(this.weather);
+  }
+
+  ngOnChanges(): void {
     this.image = this.weatherImageService.getImage(this.weather);
   }
 }
