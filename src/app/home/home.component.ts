@@ -4,6 +4,7 @@ import { ButtonType, City } from '../core/models';
 import { WeatherService } from '../core/services/weather.service';
 import { Forecast } from '../core/models/forecast';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { LocationService } from '../core/services/location.service';
 
 @Component({
   selector: 'wa-home',
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private forecastSubscription!: Subscription;
   cityForm!: FormGroup;
 
-  constructor (private weatherService: WeatherService, private fb: FormBuilder) {
+  constructor (private weatherService: WeatherService, private fb: FormBuilder, private locationService: LocationService) {
     this.cityForm = this.fb.group({
       cityName : ['']
     })
@@ -61,5 +62,12 @@ export class HomeComponent implements OnInit, OnDestroy {
         forecast => this.forecast = forecast
       );
     }
+  }
+
+  getLoc() {
+    this.locationService.getPosition().then(pos=>
+      {
+         console.log(`Positon: ${pos.lng} ${pos.lat}`);
+      });
   }
 }

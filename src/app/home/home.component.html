@@ -9,7 +9,7 @@
         <button type="submit" class="searchBtn">search</button>
       </form>
       <wa-icon-button>
-        <span class="material-icons">gps_fixed</span>
+        <span class="material-icons" (click)="getLoc()">gps_fixed</span>
       </wa-icon-button>
     </div>
     <wa-weather-image [weather]="city.weather" [verticalCenter]="true"></wa-weather-image>
