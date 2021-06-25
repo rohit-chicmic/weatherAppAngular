@@ -19,11 +19,22 @@ export class HomeComponent implements OnInit, OnDestroy {
   private weatherSubscription!: Subscription;
   private forecastSubscription!: Subscription;
   cityForm!: FormGroup;
+  isLoggedIn = false;
+  tokenData;
 
   constructor (private weatherService: WeatherService, private fb: FormBuilder, private locationService: LocationService) {
     this.cityForm = this.fb.group({
       cityName : ['']
     })
+
+    this.tokenData = <string>localStorage.getItem('tokenData');
+    
+    this.tokenData = JSON.parse(this.tokenData);
+    // console.log('===========>', this.tokenData?.api_key);
+    if(this.tokenData) {
+      this.isLoggedIn = true;
+    }
+    
   }
 
   ngOnInit(): void {
@@ -70,5 +81,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       {
          console.log(`Positon: ${pos.lng} ${pos.lat}`);
       });
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+    localStorage.clear();
   }
 }

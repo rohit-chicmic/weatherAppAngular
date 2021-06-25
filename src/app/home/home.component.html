@@ -1,20 +1,37 @@
-<main class="main-home">
-  <section class="info-home">
+<nav class="fixed-nav-bar">
+  <div class="buttons-home">
+    <!-- <wa-button [type]="secondaryType">
+      Search for place
+    </wa-button> -->
     <div class="buttons-home">
-      <!-- <wa-button [type]="secondaryType">
-        Search for place
-      </wa-button> -->
-      <form [formGroup]="cityForm" (submit)="onSubmit()">
-        <input type="text" placeholder="Enter city" formControlName="cityName" class="cityInput">
-        <button type="submit" class="searchBtn">search</button>
-      </form>
-      <wa-icon-button>
-        <span class="material-icons" (click)="getLoc()">gps_fixed</span>
-      </wa-icon-button>
-    </div>
+    <form [formGroup]="cityForm" (submit)="onSubmit()">
+      <input type="text" placeholder="Enter city" formControlName="cityName" class="cityInput">
+      <button type="submit" class="searchBtn">search</button>
+    </form>
+    <!-- <a class="loginBtn" routerLink="../home">Home</a> -->
+    <a class="loginBtn" routerLink="../home" *ngIf="isLoggedIn">Favourite cities</a>
+  </div>
+    <div class="buttons-home">    <a class="loginBtn" *ngIf="!isLoggedIn" routerLink="../login">Login</a>
+      <a class="loginBtn" *ngIf="isLoggedIn" (click)="logout()">Logout</a>
+    <wa-icon-button>
+      <span class="material-icons" (click)="getLoc()">gps_fixed</span>
+    </wa-icon-button>
+  </div>
+
+  </div>
+  <!-- Fixed navigation bar content -->
+</nav>
+
+
+<main class="main-home">
+
+  <section class="info-home">
+    
     <wa-weather-image [weather]="city.weather" [verticalCenter]="true"></wa-weather-image>
     <wa-weather-info [city]="city"></wa-weather-info>
   </section>
+  
+  
   <section class="extra-home">
     <div class="forecast-grid">
       <wa-forecast-card *ngFor="let item of forecast" [item]="item">

@@ -1,20 +1,23 @@
 @import 'colors';
 
 .main-home {
+  padding-top: 50px;
   display: grid;
   grid-template-columns: 1fr;
+  background: url('../../assets/background.png') no-repeat, $bg-color;
   @media screen and (min-width: 768px) {
     grid-template-columns: 360px 1fr;
   }
 }
 
 .info-home {
-  min-height: 100vh;
+  
+  min-height: 60vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 2fr 3fr;
-  padding: 1.125rem 0.75rem;
-  background: url('../../assets/background.png') no-repeat, $bg-color;
+  padding-top: 100px;
+  
   background-position: center 50px;
   background-size: 480px;
 
@@ -30,8 +33,10 @@
 }
 
 .extra-home {
-  background-color: $bg-color-dark;
+  
+  // background-color: $bg-color-dark;
   padding: 3.25rem 3.375rem;
+ 
   @media screen and (min-width: 1200px) {
     padding: 7.68rem;
   }
@@ -81,5 +86,24 @@
 
 }
 
+
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 70px;
+  background-color: #1E213A;
+  box-shadow: black;
+  padding: 20px;
+}
+
+.loginBtn {
+  padding: 10px;
+  cursor: pointer;
+  color: #fdfdfd;
+  font-style: normal;
+}
 
 

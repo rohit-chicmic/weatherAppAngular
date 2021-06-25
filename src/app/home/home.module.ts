@@ -6,7 +6,13 @@ import { WeatherImageComponent } from './weather-image/weather-image.component';
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { ForecastCardComponent } from './forecast-card/forecast-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
+
+const routes: Routes = [
+  { path: '', component: HomeComponent }
+
+];
 
 
 @NgModule({
@@ -19,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forChild(routes)
   ],
   exports: [HomeComponent]
 })
