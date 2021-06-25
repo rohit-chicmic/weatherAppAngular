@@ -7,11 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'fav', component: FavouritesComponent},
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)}
 
 ];
@@ -20,7 +22,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,

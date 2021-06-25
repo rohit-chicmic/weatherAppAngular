@@ -5,6 +5,7 @@ import { WeatherService } from '../core/services/weather.service';
 import { Forecast } from '../core/models/forecast';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LocationService } from '../core/services/location.service';
+import { UserService } from '../core/services/user.service';
 
 @Component({
   selector: 'wa-home',
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   isLoggedIn = false;
   tokenData;
 
-  constructor (private weatherService: WeatherService, private fb: FormBuilder, private locationService: LocationService) {
+  constructor (private weatherService: WeatherService, private fb: FormBuilder, private locationService: LocationService, ) {
     this.cityForm = this.fb.group({
       cityName : ['']
     })
@@ -105,4 +106,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.isLoggedIn = false;
     localStorage.clear();
   }
+
+  
 }
