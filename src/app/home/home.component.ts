@@ -77,10 +77,28 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getLoc() {
+    let position;
     this.locationService.getPosition().then(pos=>
       {
+        position = pos;
          console.log(`Positon: ${pos.lng} ${pos.lat}`);
+         this.weatherSubscription = this.weatherService
+      .searchLoc(position)
+      .subscribe(city => {
+        this.city = city;
+        console.log(this.city);
+        
       });
+
+    this.forecastSubscription = this.weatherService
+      .getForecastLoc(position)
+      .subscribe(
+        forecast => this.forecast = forecast
+      );
+
+      });
+
+      
   }
 
   logout() {

@@ -7,7 +7,7 @@ import { WeatherImageService } from 'src/app/core/services/weather-image.service
   styleUrls: ['./weather-image.component.scss']
 })
 export class WeatherImageComponent implements OnInit, OnChanges {
-  @Input() weather!: string;
+  @Input() weather!: any;
   @Input() width = 150;
   @Input() verticalCenter = false;
   image!: string;

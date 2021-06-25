@@ -4,7 +4,7 @@
     <form [formGroup]="form" class="login-container" (ngSubmit)="login()">
   
       <p [ngClass]="{ 'has-error': submitted && f.email.errors }">
-        <input type="email" placeholder="Email" formControlName="email">
+        <input class="emailInput" type="email" placeholder="Email" formControlName="email" autocomplete="email">
       </p>
   
       <div *ngIf="f.email.errors" class="help-block">
@@ -13,7 +13,7 @@
       </div>
   
       <p [ngClass]="{ 'has-error': submitted && f.password.errors }">
-        <input type="password" placeholder="Password" formControlName="password">
+        <input type="password" placeholder="Password" formControlName="password" autocomplete="current-password">
       </p>
   
       <div *ngIf="f.password.touched && f.password.errors" class="help-block">
@@ -22,7 +22,7 @@
   
       <p>
         <button type="submit" class="btn btn-success">Login</button> &nbsp;&nbsp;
-        <a class="btn btn-primary" routerLink='../register'>Register</a>&nbsp;&nbsp;
+        <a class="btn btn-outline-info" routerLink='../register'>Register</a>&nbsp;&nbsp;
         <a class="btn btn-primary" routerLink='../home'>Home</a>
 
   

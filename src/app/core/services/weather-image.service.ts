@@ -7,7 +7,7 @@ import { weatherImages } from '../constants'
 })
 export class WeatherImageService {
   getImage(weatherState: string) {
-    const state = weatherState.toLocaleUpperCase();
+    const state = weatherState?.toLocaleUpperCase();
     // console.log(state);
     
     if (weatherImages[state]) {

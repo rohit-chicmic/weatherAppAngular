@@ -54,4 +54,39 @@ export class WeatherService {
         })
       );
   }
+
+  searchLoc(loc: any): Observable<City> {
+    return this.http.get<CityResponse>(`https://api.openweathermap.org/data/2.5/weather?lat=${loc.lat}&lon=${loc.lng}&appid=${this.apiKey}&units=metric`)
+      .pipe(
+        map(({ id, name, main, wind, visibility, weather }) => {
+          const { temp, humidity, pressure } = main;
+          return {
+            id,
+            name,
+            temp,
+            windSpeed: wind.speed,
+            visibility,
+            humidity,
+            pressure,
+            weather: weather[0].main
+          }
+        })
+      );
+  }
+  getForecastLoc(loc:any): Observable<Forecast[]> {
+    return this.http.get<ForecastResponse>(`https://api.openweathermap.org/data/2.5/forecast?lat=${loc.lat}&lon=${loc.lng}&appid=${this.apiKey}&units=metric`)
+      .pipe(
+        map(({ list }) => {
+          const forecast = list.slice(1, 9);
+          return forecast.map(({ main, weather, dt_txt }) => ({
+            date: dt_txt,
+            weather: weather[0].main,
+            temp: {
+              max: main.temp_max,
+              min: main.temp_min
+            }
+          }));
+        })
+      );
+  }
 }
