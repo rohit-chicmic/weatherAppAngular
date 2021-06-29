@@ -1,0 +1,55 @@
+@import 'colors';
+
+.forecast-content {
+  text-align: center;
+}
+
+.forecast-date {
+  margin-top: 0;
+  margin-bottom: 0.625rem;
+}
+
+.forecast-temp {
+//   display: ;
+  margin-top: 2rem;
+  margin-bottom: 0;
+//   justify-content: space-between;
+  align-items: center;
+//   > span:last-child {
+//     color: $secondary-text-color;
+//   }
+}
+
+.image-container {
+  height: 66px;
+}
+
+
+.card {
+  background-color: $bg-color;
+  padding: 1.25rem;
+}
+
+.extra-home {
+  
+    // background-color: $bg-color-dark;
+    padding: 3.25rem 3.375rem;
+   
+    @media screen and (min-width: 1200px) {
+      padding: 7.68rem;
+    }
+  }
+  
+  .forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-gap: 1.625rem;
+    > div {
+      border: 1px solid rgb(107, 177, 218);
+    }
+    @media screen and (min-width: 1200px) {
+      grid-gap: 2rem;
+    }
+  }
+
+

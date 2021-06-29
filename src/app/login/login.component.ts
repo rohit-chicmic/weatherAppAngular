@@ -22,16 +22,16 @@ export class LoginComponent implements OnInit {
     const token = localStorage.getItem('accessToken');
     // Check whether the token is expired and return
     // true or false
-    if (token) {  
-      this.router.navigateByUrl('chat');
-    }
+    // if (token) {  
+    //   this.router.navigateByUrl('chat');
+    // }
     
   }
    
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
 
     });

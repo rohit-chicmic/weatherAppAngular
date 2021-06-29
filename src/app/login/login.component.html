@@ -9,7 +9,7 @@
   
       <div *ngIf="f.email.errors" class="help-block">
         <div class="warn" *ngIf="f.email.touched && f.email.errors.required">*email is required</div>
-        <div class="warn" *ngIf="f.email.touched && f.email.errors.pattern">*email is invalid</div>
+        <div class="warn" *ngIf="f.email.touched && f.email.errors.email">*email is invalid</div>
       </div>
   
       <p [ngClass]="{ 'has-error': submitted && f.password.errors }">

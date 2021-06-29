@@ -21,5 +21,9 @@ import { environment } from 'src/environments/environment';
         return this.http.post(environment.API_URL_ADD, data)
     }
 
+    getFav(data:any) {
+        return this.http.post(environment.API_URL_GET_Fav, data);
+    }
+
 
 }

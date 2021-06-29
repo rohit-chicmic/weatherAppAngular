@@ -7,10 +7,12 @@ import { WeatherInfoComponent } from './weather-info/weather-info.component';
 import { ForecastCardComponent } from './forecast-card/forecast-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { FavouritesComponent } from '../favourites/favourites.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: 'fav', component: FavouritesComponent},
 
 ];
 
@@ -20,7 +22,8 @@ const routes: Routes = [
     HomeComponent,
     WeatherImageComponent,
     WeatherInfoComponent,
-    ForecastCardComponent
+    ForecastCardComponent,
+    FavouritesComponent
   ],
   imports: [
     CommonModule,

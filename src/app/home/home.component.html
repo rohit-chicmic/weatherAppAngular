@@ -9,7 +9,7 @@
       <button type="submit" class="searchBtn">search</button>
     </form>
     <!-- <a class="loginBtn" routerLink="../home">Home</a> -->
-    <a class="loginBtn" routerLink="../home" *ngIf="isLoggedIn" routerLink="../fav">Favourite cities</a>
+    <a class="loginBtn" routerLink="../home" *ngIf="isLoggedIn" routerLink="fav">Favourite cities</a>
   </div>
     <div class="buttons-home">    <a class="loginBtn" *ngIf="!isLoggedIn" routerLink="../login">Login</a>
       <a class="loginBtn" *ngIf="isLoggedIn" (click)="logout()">Logout</a>
